@@ -1,0 +1,63 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: black;
+
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+.bubbles span{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: rgb(1, 5, 255); 
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px palevioletred,
+    0 0 50px palevioletred
+    0 0 100px palevioletred;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(150s/ var(--i));
+
+}
+.bubbles span:nth-child(even){
+    background: rgb(73, 7, 255);
+    box-shadow: 10px 10px 10px 10px palevioletred,
+    0 0 50px palevioletred
+    0 0 100px palevioletred;
+}
+@keyframes animate {
+    0% {
+      transform: translateY(100vh) scale(0);
+    }
+    100% {
+      transform: translateY(-10vh) scale (0);
+    }
+  }
+  
+  button{
+  position: center;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 2; 
+  background-color: black; 
+  color: blue; 
+  border: blue; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  }
